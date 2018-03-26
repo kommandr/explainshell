@@ -31,7 +31,7 @@ opt_regex = re.compile(r'''
        [^\]>]+                # either read everything until the closing ] or >
        |
        (?(2)
-        [-a-zA-Z]+             # or if we didn't see [ or < but just saw =, read all letters, e.g. -a=abc
+        [-a-zA-Z0-9_]+             # or if we didn't see [ or < but just saw =, read all letters, e.g. -a=abc
         |
         [A-Z]+                # but if we didn't have =, only allow uppercase letters, e.g. -a FOO
        )
